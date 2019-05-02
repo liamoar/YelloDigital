@@ -21,7 +21,9 @@ class PostsController extends Controller
 
     public function index()
     {
+
       $posts = Post::orderBy('created_at', 'desc')->paginate(3);
+      dd ($posts); 
       return view('Frontend/posts.index',compact('posts'));
     }
 

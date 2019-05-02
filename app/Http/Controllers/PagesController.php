@@ -10,7 +10,7 @@ class PagesController extends Controller
 
     protected $limit = 3;
     public function dashboard(){
-      $posts = Post::with('user')->orderBy('created_at','desc')->paginate($this->limit);
+      $posts = Post::with('userss')->orderBy('created_at','desc')->paginate($this->limit);
 
       return view('/Frontend.pages.dashboard',compact('posts'));
     }
